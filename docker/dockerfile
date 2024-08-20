@@ -1,0 +1,13 @@
+# Use a base image with the necessary dependencies
+FROM ubuntu:latest
+
+# Install required packages
+RUN apt-get update && \
+    apt-get install -y ncbi-blast+
+
+# Set the working directory
+WORKDIR /app
+
+
+# Set the default command arguments
+CMD ["blastn"]
